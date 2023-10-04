@@ -27,7 +27,7 @@ Regex components work together to define a search pattern, the following compone
 ### Anchors
 
 An anchor is used to match a position before, after, or between characters.
-The only part of our regex that is an anchor is the <code style="background-color: #FF69B4;">$</code>, this matches the end of the string, or the end of a line if the multiline flag (m) is enabled.
+The only part of our regex that is an anchor is the <code>$</code>, this matches the end of the string, or the end of a line if the multiline flag (m) is enabled.
 
 ### Quantifiers
 
