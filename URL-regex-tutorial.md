@@ -7,7 +7,7 @@ This article is here as a guide to breakdown and explain the usage, and componen
 A regex is used to define a search pattern to search a body of text or string.
 The code below is a snippet of the regex used to match a URL:
 
-- `/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]_)_\/?$/`
+`/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]_)_\/?$/`
 
 ## Table of Contents
 
@@ -27,7 +27,11 @@ Regex components work together to define a search pattern, the following compone
 ### Anchors
 
 An anchor is used to match a position before, after, or between characters.
-The only part of our regex that is an anchor is the `$`, this matches the end of the string, or the end of a line if the multiline flag `(m)` is enabled.
+
+Examples within our regex include:
+
+1. `^` This matches the start of a string, or the end of a string if the multiline flag `(m)` is enabled. This means that it will be looking for something specifically starting with `^(https?:\/\/)`
+2. `$` This matches the end of a string, or the end of a line if the multiline flag `(m)` is enabled. This means that it will be looking for something specifically ending with `([\/\w \.-]_)_\/?$` or if none are present since the character grouping specifies the query string which can be `null`, it would look for the preceeding token which is required `([a-z\.]{2,6})`.
 
 ### Quantifiers
 
@@ -35,8 +39,9 @@ A quantifier tells the regex to match a certain quantity of the character, token
 
 Examples within our regex include:
 
-1. `'*'` the asterisk quantifier matches `0` or `more` of the preceeding token.
-2. `'?'` the question mark quantifier matches between `0` and `1` of the preceeding token.
+1. `*` the asterisk quantifier matches `0` or `more` of the preceeding token. This means that there can be any number of tokens, even zero.
+2. `?` the question mark quantifier matches between `0` and `1` of the preceeding token. This means that there can be zero tokens and no more than 1 token.
+3. `+` the plus sign quantifier matches `1` or `more` of the preceeding token. This means that there must be at least one token.
 
 ### Grouping Constructs
 
@@ -52,7 +57,7 @@ Examples within our regex include:
 
 4. `([\/\w \.-]\*)` This group captures any query strings that come after the domain. The matching guidelines mean that it can be `null (empty)`, or contain any word character `(alphanumeric & underscore)`, `space` character, `period`, and `hyphen`.
 
-#### * The periods, and hyphens are escaped characters and require a back slash in order to be matched.
+#### \* The periods, and hyphens are escaped characters and require a back slash in order to be matched.
 
 ### Bracket Expressions
 
@@ -69,7 +74,7 @@ Examples within our regex include:
 3. `[\/\w \.-]`
    This positive character group outlines that it will match a `forward slash`, any word character `(alphanumeric & underscore)`, a `period`, and a `hypen`.
 
-#### * The periods, and hyphens are escaped characters and require a back slash in order to be matched.
+#### \* The periods, and hyphens are escaped characters and require a back slash in order to be matched.
 
 ### Character Classes
 
@@ -103,12 +108,13 @@ Examples within our regex include:
 ## Author
 
 ### Daniel Masefield
-```
+
 This tutorial was written by Daniel Masefield, a full stack web developer.
 
 [GitHub](https://github.com/Staroyee)
+
 [LinkedIn](https://www.linkedin.com/in/danielmasefield03/)
-```
+
 ## Resources
 
 - https://regexr.com/
