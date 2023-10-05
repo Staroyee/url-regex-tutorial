@@ -7,7 +7,7 @@ This article is here as a guide to breakdown and explain the usage, and componen
 A regex is used to define a search pattern to search a body of text or string.
 The code below is a snippet of the regex used to match a URL:
 
-- <code>/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]_)_\/?$/</code>
+- <code>`/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]_)_\/?$/`</code>
 
 ## Table of Contents
 
@@ -27,7 +27,7 @@ Regex components work together to define a search pattern, the following compone
 ### Anchors
 
 An anchor is used to match a position before, after, or between characters.
-The only part of our regex that is an anchor is the <code>$</code>, this matches the end of the string, or the end of a line if the multiline flag (m) is enabled.
+The only part of our regex that is an anchor is the <code>`$`</code>, this matches the end of the string, or the end of a line if the multiline flag (m) is enabled.
 
 ### Quantifiers
 
@@ -35,7 +35,7 @@ A quantifier tells the regex to match a certain quantity of the character, token
 
 Examples within our regex include:
 
-1. '<code>\*</code>' the asterisk quantifier matches 0 or more of the preceeding token.
+1. '<code>*</code>' the asterisk quantifier matches 0 or more of the preceeding token.
 2. '<code>?</code>' the question mark quantifier matches between 0 and 1 of the preceeding token.
 
 ### Grouping Constructs
